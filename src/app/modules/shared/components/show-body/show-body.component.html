@@ -1,0 +1,31 @@
+<!-- <div>
+    <h1 class="generic-tittle-body-section">{{tittle}}</h1>
+</div> -->
+<section class="body-section">
+<div class="body-list">
+    <ul>
+        <li *ngFor="let rmChar of listRMChars">
+            <div class="line">
+                <div class="in-line">
+                    <img [src]="rmChar.image" alt="" class="char-img">
+                </div>
+                <div class="in-line char-info">
+                    <h2 class="name" (click)="goTo($event, rmChar.id)">
+                        {{rmChar.name}}
+                    </h2>
+                    <p class="status">
+                        <span class="status__icon" [ngClass]="{'status__green-icon':rmChar.status === 'Alive','status__red-icon':rmChar.status === 'Dead','status__grey-icon':rmChar.status === 'unknown'}"></span>
+                        {{rmChar.status}} - {{rmChar.species}}
+                    </p>
+
+                    <p class="sub_title">Last known location:</p>
+                    <p class="sub_title_value">{{rmChar.location.name}}</p>
+
+                    <p class="sub_title">First seen in:</p>
+                    <p class="sub_title_value">{{rmChar.episode[0]}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</section>
